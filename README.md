@@ -97,7 +97,24 @@ module "umanis_storage_account" {
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_containers"></a> [containers](#output\_containers) | Map of containers. |
+| <a name="output_file_shares"></a> [file\_shares](#output\_file\_shares) | Map of Storage SMB file shares. |
+| <a name="output_queues"></a> [queues](#output\_queues) | Map of Storage queues. |
+| <a name="output_storage_account_id"></a> [storage\_account\_id](#output\_storage\_account\_id) | The ID of the storage account. |
+| <a name="output_storage_account_name"></a> [storage\_account\_name](#output\_storage\_account\_name) | The name of the storage account. |
+| <a name="output_storage_account_primary_location"></a> [storage\_account\_primary\_location](#output\_storage\_account\_primary\_location) | The primary location of the storage account |
+| <a name="output_storage_account_primary_web_endpoint"></a> [storage\_account\_primary\_web\_endpoint](#output\_storage\_account\_primary\_web\_endpoint) | The endpoint URL for web storage in the primary location. |
+| <a name="output_storage_account_primary_web_host"></a> [storage\_account\_primary\_web\_host](#output\_storage\_account\_primary\_web\_host) | The hostname with port if applicable for web storage in the primary location. |
+| <a name="output_storage_account_secondary_location"></a> [storage\_account\_secondary\_location](#output\_storage\_account\_secondary\_location) | The secondary location of the storage account |
+| <a name="output_storage_account_secondary_web_endpoint"></a> [storage\_account\_secondary\_web\_endpoint](#output\_storage\_account\_secondary\_web\_endpoint) | The endpoint URL for web storage in the secondary location. |
+| <a name="output_storage_account_secondary_web_host"></a> [storage\_account\_secondary\_web\_host](#output\_storage\_account\_secondary\_web\_host) | The hostname with port if applicable for web storage in the secondary location. |
+| <a name="output_storage_primary_access_key"></a> [storage\_primary\_access\_key](#output\_storage\_primary\_access\_key) | The primary access key for the storage account |
+| <a name="output_storage_primary_connection_string"></a> [storage\_primary\_connection\_string](#output\_storage\_primary\_connection\_string) | The primary connection string for the storage account |
+| <a name="output_storage_secondary_access_key"></a> [storage\_secondary\_access\_key](#output\_storage\_secondary\_access\_key) | The primary access key for the storage account. |
+| <a name="output_storage_secondary_connection_string"></a> [storage\_secondary\_connection\_string](#output\_storage\_secondary\_connection\_string) | The secondary connection string for the storage account |
+| <a name="output_tables"></a> [tables](#output\_tables) | Map of Storage tables. |
 <!-- END_TF_DOCS -->
 
 ## Related documentation
