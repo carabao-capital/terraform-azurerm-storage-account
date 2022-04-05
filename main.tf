@@ -26,18 +26,18 @@ resource "azurecaf_name" "self" {
 }
 
 resource "azurerm_storage_account" "self" {
-  name                      = local.resource_name
-  resource_group_name       = data.azurerm_resource_group.parent_group.name
-  location                  = local.location
-  account_kind              = var.account_kind
-  account_tier              = local.account_tier
-  account_replication_type  = local.account_replication_type
-  enable_https_traffic_only = true
-  min_tls_version           = "TLS1_2"
-  allow_blob_public_access  = var.enable_advanced_threat_protection == true ? true : false
-  tags                      = local.tags
-  shared_access_key_enabled = var.shared_access_key_enabled
-  is_hns_enabled            = var.is_hns_enabled
+  name                            = local.resource_name
+  resource_group_name             = data.azurerm_resource_group.parent_group.name
+  location                        = local.location
+  account_kind                    = var.account_kind
+  account_tier                    = local.account_tier
+  account_replication_type        = local.account_replication_type
+  enable_https_traffic_only       = true
+  min_tls_version                 = "TLS1_2"
+  allow_nested_items_to_be_public = var.enable_advanced_threat_protection == true ? true : false
+  tags                            = local.tags
+  shared_access_key_enabled       = var.shared_access_key_enabled
+  is_hns_enabled                  = var.is_hns_enabled
 
   dynamic "static_website" {
     for_each = var.static_website != null ? ["true"] : []
