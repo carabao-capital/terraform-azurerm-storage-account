@@ -91,6 +91,24 @@ variable "shared_access_key_enabled" {
   default     = true
 }
 
+variable "blob_cors_rule" {
+  description = "CORS Rule"
+  type = object({
+    allowed_headers    = list(string)
+    allowed_methods    = list(string)
+    allowed_origins    = list(string)
+    exposed_headers    = list(string)
+    max_age_in_seconds = number
+  })
+  default = {
+    allowed_headers    = ["*"]
+    allowed_methods    = ["*"]
+    allowed_origins    = ["*"]
+    exposed_headers    = ["*"]
+    max_age_in_seconds = 1800
+  }
+}
+
 variable "static_website" {
   description = "Static web site configuration. static_website can only be set when the account_kind is set to StorageV2 or BlockBlobStorage."
   type        = object({ index_document = string, error_404_document = string })
