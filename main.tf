@@ -39,6 +39,14 @@ resource "azurerm_storage_account" "self" {
   shared_access_key_enabled       = var.shared_access_key_enabled
   is_hns_enabled                  = var.is_hns_enabled
 
+  dynamic "custom_domain" {
+    for_each = var.custom_domain != null ? ["true"] : []
+
+    content {
+      name = var.custom_domain
+    }
+  }
+
   dynamic "static_website" {
     for_each = var.static_website != null ? ["true"] : []
     content {

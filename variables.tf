@@ -91,6 +91,12 @@ variable "shared_access_key_enabled" {
   default     = true
 }
 
+variable "custom_domain" {
+  description = "The Custom Domain Name to use for the Storage Account, which will be validated by Azure."
+  type        = string
+  default     = null
+}
+
 variable "blob_cors_rule" {
   description = "CORS Rule"
   type = object({
