@@ -43,7 +43,8 @@ resource "azurerm_storage_account" "self" {
     for_each = var.custom_domain != null ? ["true"] : []
 
     content {
-      name = var.custom_domain
+      name          = var.custom_domain
+      use_subdomain = var.indirect_custom_domain
     }
   }
 

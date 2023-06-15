@@ -97,6 +97,12 @@ variable "custom_domain" {
   default     = null
 }
 
+variable "indirect_custom_domain" {
+  description = "Should the Custom Domain Name be validated by using indirect CNAME validation?"
+  type        = bool
+  default     = true
+}
+
 variable "blob_cors_rule" {
   description = "CORS Rule"
   type = object({
