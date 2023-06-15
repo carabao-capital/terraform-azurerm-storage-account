@@ -40,11 +40,12 @@ resource "azurerm_storage_account" "self" {
   is_hns_enabled                  = var.is_hns_enabled
 
   dynamic "custom_domain" {
-    for_each = var.custom_domain != null ? ["true"] : []
+    for_each = var.custom_domains
+    iterator = domain
 
     content {
-      name          = var.custom_domain
-      use_subdomain = var.indirect_custom_domain
+      name          = domain.value.name
+      use_subdomain = domain.value.use_subdomain
     }
   }
 

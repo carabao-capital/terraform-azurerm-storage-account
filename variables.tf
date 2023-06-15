@@ -91,16 +91,14 @@ variable "shared_access_key_enabled" {
   default     = true
 }
 
-variable "custom_domain" {
+variable "custom_domains" {
   description = "The Custom Domain Name to use for the Storage Account, which will be validated by Azure."
-  type        = string
-  default     = null
-}
-
-variable "indirect_custom_domain" {
-  description = "Should the Custom Domain Name be validated by using indirect CNAME validation?"
-  type        = bool
-  default     = true
+  type = map(object({
+    name          = string
+    use_subdomain = optional(bool, true)
+  }))
+  nullable = false
+  default  = {}
 }
 
 variable "blob_cors_rule" {
