@@ -51,6 +51,26 @@ output "storage_secondary_connection_string" {
   sensitive   = true
 }
 
+output "storage_account_primary_blob_endpoint" {
+  description = "The endpoint URL for blob storage in the primary location."
+  value       = azurerm_storage_account.self.primary_blob_endpoint
+}
+
+output "storage_account_primary_blob_host" {
+  description = "The hostname with port if applicable for blob storage in the primary location."
+  value       = azurerm_storage_account.self.primary_blob_host
+}
+
+output "storage_account_secondary_blob_endpoint" {
+  description = "The endpoint URL for blob storage in the secondary location."
+  value       = azurerm_storage_account.self.secondary_blob_endpoint
+}
+
+output "storage_account_secondary_blob_host" {
+  description = "The hostname with port if applicable for blob storage in the secondary location."
+  value       = azurerm_storage_account.self.secondary_blob_host
+}
+
 output "storage_primary_access_key" {
   description = "The primary access key for the storage account"
   value       = azurerm_storage_account.self.primary_access_key
